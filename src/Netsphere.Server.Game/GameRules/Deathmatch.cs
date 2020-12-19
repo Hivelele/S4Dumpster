@@ -108,7 +108,26 @@ namespace Netsphere.Server.Game.GameRules
 
         protected override (uint baseGain, uint bonusGain) CalculateAPGained(Player plr)
         {
-            return (0, 0);
+            var experienceRates = _options.ExperienceRates;
+            var place = 1;
+            var rankingBonus = 0f;
+            switch (place)
+            {
+                case 1:
+                    rankingBonus = experienceRates.FirstPlaceBonus;
+                        break;
+
+                case 2:
+                    rankingBonus = experienceRates.SecondPlaceBonus;
+                    break;
+
+                case 3:
+                    rankingBonus = experienceRates.ThirdPlaceBonus;
+                    break;
+            }
+
+            var APGained = (uint)(plr.Score.GetTotalScore() * experienceRates.ScoreFactor + rankingBonus);
+            return (APGained, 0);
         }
 
         protected internal override void OnScoreKill(ScoreContext killer, ScoreContext assist, ScoreContext target,
