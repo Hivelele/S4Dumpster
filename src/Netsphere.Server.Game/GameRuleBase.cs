@@ -79,6 +79,9 @@ namespace Netsphere.Server.Game
                 var (expGain, bonusExpGain) = CalculateExperienceGained(plr);
                 var (penGain, bonusPENGain) = CalculatePENGained(plr);
 
+                if (Room.EventRoom)
+                    bonusExpGain += expGain;
+
                 var briefingPlayer = briefing.Players.First(x => x.AccountId == plr.Account.Id);
                 briefingPlayer.ExperienceGained = expGain;
                 briefingPlayer.BonusExperienceGained = bonusExpGain;

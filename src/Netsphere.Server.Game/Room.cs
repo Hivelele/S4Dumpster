@@ -264,9 +264,7 @@ namespace Netsphere.Server.Game
             if (plr.Room != this || Master == plr)
                 return;
 
-            if (plr.Account.SecurityLevel >= SecurityLevel.GameMaster && EventRoom)
-                Options.Prefix = S4Color.Yellow.ToString();
-            else
+            if (EventRoom && plr.Account.SecurityLevel < SecurityLevel.GameMaster)
                 EventRoom = false;
 
             Master = plr;
