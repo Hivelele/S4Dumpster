@@ -77,7 +77,7 @@ namespace Netsphere.Server.Game
             foreach (var plr in TeamManager.PlayersPlaying)
             {
                 var (expGain, bonusExpGain) = CalculateExperienceGained(plr);
-                var (penGain, bonusPENGain) = CalculatePENGained(plr);
+                var (APGain, bonusAPGain) = CalculateAPGained(plr);
 
                 if (Room.EventRoom)
                     bonusExpGain += expGain;
@@ -86,8 +86,8 @@ namespace Netsphere.Server.Game
                 var briefingPlayer = briefing.Players.First(x => x.AccountId == plr.Account.Id);
                 briefingPlayer.ExperienceGained = expGain;
                 briefingPlayer.BonusExperienceGained = bonusExpGain;
-                briefingPlayer.PENGained = penGain;
-                briefingPlayer.BonusPENGained = bonusPENGain;
+                briefingPlayer.APGained = APGain;
+                briefingPlayer.BonusAPGained = bonusAPGain;
 
                 if (expGain > 0)
                 {
@@ -95,10 +95,11 @@ namespace Netsphere.Server.Game
                     briefingPlayer.LevelUp = levelUp;
                 }
 
-                if (penGain > 0)
+                if (APGain > 0)
                 {
-                    plr.PEN += penGain + bonusPENGain;
+                    plr.AP += APGain + bonusAPGain;
                     plr.SendMoneyUpdate();
+
                 }
 
                 // Durability loss based on play time
@@ -197,7 +198,7 @@ namespace Netsphere.Server.Game
 
         protected abstract (uint baseGain, uint bonusGain) CalculateExperienceGained(Player plr);
 
-        protected abstract (uint baseGain, uint bonusGain) CalculatePENGained(Player plr);
+        protected abstract (uint baseGain, uint bonusGain) CalculateAPGained(Player plr);
 
         private bool _CanStartGame()
         {

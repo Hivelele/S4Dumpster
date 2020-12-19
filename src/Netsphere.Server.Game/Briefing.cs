@@ -75,8 +75,8 @@ namespace Netsphere.Server.Game
         // Result data
         public uint ExperienceGained { get; set; }
         public uint BonusExperienceGained { get; set; }
-        public uint PENGained { get; set; }
-        public uint BonusPENGained { get; set; }
+        public uint APGained { get; set; }
+        public uint BonusAPGained { get; set; }
         public bool LevelUp { get; set; }
 
         public virtual void Serialize(BinaryWriter w)
@@ -88,12 +88,12 @@ namespace Netsphere.Server.Game
             w.Write((int)Mode);
             w.Write(TotalScore);
             w.Write(0);
-            w.Write(PENGained);
+            w.Write(APGained);
             w.Write(ExperienceGained);
             w.Write(Experience);
             w.Write(LevelUp);
             w.Write(BonusExperienceGained);
-            w.Write(BonusPENGained);
+            w.Write(BonusAPGained);
             w.Write(0);
 
             /*

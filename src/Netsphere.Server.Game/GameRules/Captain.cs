@@ -130,7 +130,7 @@ namespace Netsphere.Server.Game.GameRules
             return (experienceGained, 0);
         }
 
-        protected override (uint baseGain, uint bonusGain) CalculatePENGained(Player plr)
+        protected override (uint baseGain, uint bonusGain) CalculateAPGained(Player plr)
         {
             return (0, 0);
         }
