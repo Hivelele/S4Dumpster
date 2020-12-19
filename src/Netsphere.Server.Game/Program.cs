@@ -234,7 +234,7 @@ namespace Netsphere.Server.Game
                 .Member(dest => dest.GameRule, src => src.Options.GameRule)
                 .Member(dest => dest.Map, src => src.Options.Map)
                 .Member(dest => dest.PlayerLimit, src => src.Options.PlayerLimit)
-                .Member(dest => dest.Name, src => src.Options.Name)
+                .Member(dest => dest.Name, src => src.Options.PrefixedName)
                 .Member(dest => dest.ItemLimit, src => src.Options.EquipLimit)
                 .Member(dest => dest.PlayerCount, src => src.Players.Count(x => !x.Value.IsInGMMode))
                 .Function(dest => dest.State, src => src.GameRule.StateMachine.GameState - 1)

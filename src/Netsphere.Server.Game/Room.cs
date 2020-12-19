@@ -45,6 +45,7 @@ namespace Netsphere.Server.Game
         public TeamManager TeamManager { get; }
         public MapInfo Map { get; private set; }
         public GameRuleBase GameRule { get; private set; }
+        public bool EventRoom;
 
         public event EventHandler<RoomPlayerEventArgs> PlayerJoining;
         public event EventHandler<RoomPlayerEventArgs> PlayerJoined;
@@ -131,6 +132,13 @@ namespace Netsphere.Server.Game
                 ("ChannelId", RoomManager.Channel.Id),
                 ("RoomId", Id)
             );
+
+            //Event room
+            if (options.Name.StartsWith("event:", StringComparison.InvariantCultureIgnoreCase))
+            {
+                options.Name = options.Name.Substring("event:".Length);
+                EventRoom = true;
+            }
         }
 
         public RoomJoinError Join(Player plr)
@@ -255,6 +263,11 @@ namespace Netsphere.Server.Game
         {
             if (plr.Room != this || Master == plr)
                 return;
+
+            if (plr.Account.SecurityLevel >= SecurityLevel.GameMaster && EventRoom)
+                Options.Prefix = S4Color.Yellow.ToString();
+            else
+                EventRoom = false;
 
             Master = plr;
             Master.IsReady = false;

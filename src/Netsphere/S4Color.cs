@@ -10,6 +10,8 @@
 
         public static S4Color Blue => new S4Color(0, 0, 255);
 
+        public static S4Color Yellow => new S4Color(255, 255, 0);
+
         public int A { get; set; }
         public int R { get; set; }
         public int G { get; set; }

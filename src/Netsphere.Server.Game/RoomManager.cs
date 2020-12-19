@@ -120,6 +120,8 @@ namespace Netsphere.Server.Game
 
     public class RoomCreationOptions
     {
+        public string Prefix { get; set; } = string.Empty;
+        public string PrefixedName => Prefix + Name;
         public string Name { get; set; }
         public bool IsSpectatingEnabled => SpectatorLimit > 0;
         public GameRule GameRule { get; set; }
