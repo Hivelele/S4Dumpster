@@ -46,6 +46,7 @@ namespace Netsphere.Server.Game
         public MapInfo Map { get; private set; }
         public GameRuleBase GameRule { get; private set; }
         public bool EventRoom;
+        public bool MasterChecked;
 
         public event EventHandler<RoomPlayerEventArgs> PlayerJoining;
         public event EventHandler<RoomPlayerEventArgs> PlayerJoined;
@@ -264,8 +265,12 @@ namespace Netsphere.Server.Game
             if (plr.Room != this || Master == plr)
                 return;
 
-            if (EventRoom && plr.Account.SecurityLevel < SecurityLevel.GameMaster)
-                EventRoom = false;
+            if (!MasterChecked)
+            {
+                if (EventRoom && plr.Account.SecurityLevel < SecurityLevel.GameMaster)
+                    EventRoom = false;
+                MasterChecked = true;
+            }
 
             Master = plr;
             Master.IsReady = false;
