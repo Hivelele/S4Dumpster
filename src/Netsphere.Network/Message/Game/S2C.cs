@@ -1616,7 +1616,12 @@ namespace Netsphere.Network.Message.Game
     public class ExpRefreshInfoAckMessage : IGameMessage
     {
         [BlubMember(0)]
-        public int Unk { get; set; }
+        public uint Exp { get; set; }
+
+        public ExpRefreshInfoAckMessage(uint exp)
+        {
+            Exp = exp;
+        }
     }
 
     [BlubContract]

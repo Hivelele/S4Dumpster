@@ -260,6 +260,7 @@ namespace Netsphere.Server.Game
             // TODO Update chat server
             // TODO Do we need this?
             // Session.Send(new SBeginAccountInfoAckMessage())
+            Session.Send(new ExpRefreshInfoAckMessage(TotalExperience));
 
             return true;
         }
