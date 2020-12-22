@@ -1618,6 +1618,10 @@ namespace Netsphere.Network.Message.Game
         [BlubMember(0)]
         public uint Exp { get; set; }
 
+        public ExpRefreshInfoAckMessage()
+        {
+        }
+
         public ExpRefreshInfoAckMessage(uint exp)
         {
             Exp = exp;
