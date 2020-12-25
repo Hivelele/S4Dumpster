@@ -8,7 +8,7 @@ namespace Netsphere.Server.Game.Data
         public int Id { get; set; }
         public ShopPriceGroup PriceGroup { get; set; }
         public ShopEffectGroup EffectGroup { get; set; }
-        public bool IsEnabled { get; set; }
+        public int IsEnabled { get; set; }
         public int Discount { get; set; }
 
         public ShopItem ShopItem { get; }

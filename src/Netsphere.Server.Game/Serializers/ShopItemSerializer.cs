@@ -53,7 +53,24 @@ namespace Netsphere.Server.Game.Serializers
                 writer.Write(item.ItemInfos.Count);
                 foreach (var info in item.ItemInfos)
                 {
-                    writer.WriteProudString(info.IsEnabled ? "on" : "off");
+                    switch (info.IsEnabled)
+                    {
+                        case 1:
+                            writer.WriteProudString("on");
+                            break;
+                        case 2:
+                            writer.WriteProudString("new");
+                            break;
+                        case 3:
+                            writer.WriteProudString("event");
+                            break;
+                        case 4:
+                            writer.WriteProudString("hot");
+                            break;
+                        default:
+                            writer.WriteProudString("off");
+                            break;
+                    }
                     writer.WriteEnum(info.PriceGroup.PriceType);
                     writer.Write((ushort)info.Discount);
                     writer.WriteProudString(info.PriceGroup.Id.ToString());

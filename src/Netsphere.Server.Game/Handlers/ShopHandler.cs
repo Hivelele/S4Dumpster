@@ -75,7 +75,7 @@ namespace Netsphere.Server.Game.Handlers
                     continue;
                 }
 
-                if (!shopItemInfo.IsEnabled)
+                if (shopItemInfo.IsEnabled == 0)
                 {
                     logger.Warning("Trying to buy disabled item");
                     session.Send(new ItemBuyItemAckMessage(itemToBuy, ItemBuyResult.UnkownItem));

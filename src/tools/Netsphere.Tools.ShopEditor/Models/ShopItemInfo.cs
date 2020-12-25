@@ -13,7 +13,7 @@ namespace Netsphere.Tools.ShopEditor.Models
         public ReactiveProperty<ShopPriceGroup> PriceGroup { get; }
         public ReactiveProperty<ShopEffectGroup> EffectGroup { get; }
         public ReactiveProperty<byte> DiscountPercentage { get; }
-        public ReactiveProperty<bool> IsEnabled { get; }
+        public ReactiveProperty<int> IsEnabled { get; }
 
         public ShopItemInfo(ShopItem item, ShopItemInfoEntity entity)
         {
@@ -27,7 +27,7 @@ namespace Netsphere.Tools.ShopEditor.Models
             EffectGroup = new ReactiveProperty<ShopEffectGroup>(effectGroup);
 
             DiscountPercentage = new ReactiveProperty<byte>(entity.DiscountPercentage);
-            IsEnabled = new ReactiveProperty<bool>(entity.IsEnabled);
+            IsEnabled = new ReactiveProperty<int>(entity.IsEnabled);
         }
     }
 }

@@ -26,6 +26,6 @@ namespace Netsphere.Database.Game
         public byte DiscountPercentage { get; set; }
 
         [Column]
-        public bool IsEnabled { get; set; }
+        public int IsEnabled { get; set; }
     }
 }
