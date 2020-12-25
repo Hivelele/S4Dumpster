@@ -3281,7 +3281,7 @@
 	</item>
 	<item item_key="1021136">
 		<base name="크리스마스 언더웨어 상의" name_key="N1021136" attrib_comment_key="T1021136" sex="man"/>
-		<graphic icon_image="38_male_body.dds" to_part_scene_file="38_male_body.scn"/>
+		<graphic icon_image="38_male_body_3.dds" to_part_scene_file="38_male_body.scn"/>
 		<esperchip/>
 		<etc/>
 		<sequence/>
