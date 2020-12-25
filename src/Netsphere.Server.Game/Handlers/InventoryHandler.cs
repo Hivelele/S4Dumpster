@@ -6,7 +6,6 @@ using Netsphere.Network;
 using Netsphere.Network.Data.Game;
 using Netsphere.Network.Message.Game;
 using Netsphere.Server.Game.Services;
-using Network.Data.Game;
 using ProudNet;
 
 namespace Netsphere.Server.Game.Handlers
