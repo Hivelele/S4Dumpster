@@ -54,6 +54,10 @@ namespace Netsphere.Server.Game.Handlers
                 case UseItemAction.UnEquip:
                     character.UnEquip(item.ItemNumber.Category, message.EquipSlot);
                     break;
+
+                default:
+                    _logger.Debug($"Unknown item use type: {(int)message.Action}");
+                    break;
             }
 
             return true;
