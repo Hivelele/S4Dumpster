@@ -87,14 +87,18 @@ namespace Netsphere.Server.Game.Handlers
                 if (shopItem == null)
                     continue;
 
-                //Get effects
+                // Get effects
                 var effects = Array.Empty<uint>();
                 var shopItemInfo = shopItem.GetItemInfo(ItemPriceType.AP);
                 if (shopItemInfo.EffectGroup.Effects.Count > 0)
                     effects = shopItemInfo.EffectGroup.Effects.Select(x => x.Effect).Where(x => x != 0).ToArray();
 
-                //Create item
-                var newItem = plr.Inventory.Create(item, ItemPriceType.AP, ItemPeriodType.None, 0, 0/*color*/, effects, 1);
+                // Get price info
+                var priceInfo = shopItemInfo.PriceGroup.Prices.First();
+                //var priceInfo = shopItemInfo.PriceGroup.GetPrice(/*buraya deðerler*/);
+
+                // Create item
+                var newItem2 = plr.Inventory.Create(shopItemInfo, priceInfo, 0/*color*/, effects);
                 _logger.Debug("Created new item {0} for set {1}", item.ToString(), message.ItemId);
             }
 
