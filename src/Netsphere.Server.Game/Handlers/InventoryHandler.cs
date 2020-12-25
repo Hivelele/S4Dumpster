@@ -76,7 +76,7 @@ namespace Netsphere.Server.Game.Handlers
             var plr = session.Player;
             var setItem = plr.Inventory[message.ItemId];
 
-            session.Send(new ItemUseCapsuleAckMessage());
+            session.Send(new ItemUseCapsuleAckMessage(1));
 
             // TODO: Look up this setItem.Id's rewards from db
             var items = new ItemNumber[] { new ItemNumber(1020037) };
@@ -94,13 +94,15 @@ namespace Netsphere.Server.Game.Handlers
                     effects = shopItemInfo.EffectGroup.Effects.Select(x => x.Effect).Where(x => x != 0).ToArray();
 
                 // Get price info
-                var priceInfo = shopItemInfo.PriceGroup.Prices.First();
-                //var priceInfo = shopItemInfo.PriceGroup.GetPrice(/*buraya deðerler*/);
+                var priceInfo = shopItemInfo.PriceGroup.Prices.First(); // We would normally use GetPrice but there is only one price anyway
 
                 // Create item
                 var newItem2 = plr.Inventory.Create(shopItemInfo, priceInfo, 0/*color*/, effects);
                 _logger.Debug("Created new item {0} for set {1}", item.ToString(), message.ItemId);
             }
+
+            // Delete the set item
+            plr.Inventory.Remove(setItem);
 
             return true;
         }
