@@ -3,8 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Logging;
 using Netsphere.Network;
+using Netsphere.Network.Data.Game;
 using Netsphere.Network.Message.Game;
 using Netsphere.Server.Game.Services;
+using Network.Data.Game;
 using ProudNet;
 
 namespace Netsphere.Server.Game.Handlers
@@ -76,7 +78,13 @@ namespace Netsphere.Server.Game.Handlers
             var plr = session.Player;
             var setItem = plr.Inventory[message.ItemId];
 
-            session.Send(new ItemUseCapsuleAckMessage(1));
+            session.Send(new ItemUseCapsuleAckMessage(new CapsuleRewardDto[] {
+                new CapsuleRewardDto
+                {
+                    RewardType = CapsuleRewardType.PEN,
+                    PEN = 0
+                }
+            }, 0));
 
             // TODO: Look up this setItem.Id's rewards from db
             var items = new ItemNumber[] { new ItemNumber(1020037) };
