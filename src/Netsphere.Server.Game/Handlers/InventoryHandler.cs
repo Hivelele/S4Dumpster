@@ -1,19 +1,25 @@
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Logging;
 using Netsphere.Network;
 using Netsphere.Network.Message.Game;
+using Netsphere.Server.Game.Services;
 using ProudNet;
 
 namespace Netsphere.Server.Game.Handlers
 {
     internal class InventoryHandler
-        : IHandle<ItemUseItemReqMessage>, IHandle<ItemRepairItemReqMessage>, IHandle<ItemRefundItemReqMessage>,
+        : IHandle<ItemUseItemReqMessage>, IHandle<ItemUseCapsuleReqMessage>,
+          IHandle<ItemRepairItemReqMessage>, IHandle<ItemRefundItemReqMessage>,
           IHandle<ItemDiscardItemReqMessage>
     {
+        private readonly GameDataService _gameDataService;
         private readonly ILogger _logger;
 
-        public InventoryHandler(ILogger<InventoryHandler> logger)
+        public InventoryHandler(GameDataService gameDataService, ILogger<InventoryHandler> logger)
         {
+            _gameDataService = gameDataService;
             _logger = logger;
         }
 
@@ -58,6 +64,38 @@ namespace Netsphere.Server.Game.Handlers
                 default:
                     _logger.Debug($"Unknown item use type: {(int)message.Action}");
                     break;
+            }
+
+            return true;
+        }
+
+        [Inline]
+        public async Task<bool> OnHandle(MessageContext context, ItemUseCapsuleReqMessage message)
+        {
+            var session = context.GetSession<Session>();
+            var plr = session.Player;
+            var setItem = plr.Inventory[message.ItemId];
+
+            session.Send(new ItemUseCapsuleAckMessage());
+
+            // TODO: Look up this setItem.Id's rewards from db
+            var items = new ItemNumber[] { new ItemNumber(1020037) };
+
+            foreach (var item in items)
+            {
+                var shopItem = _gameDataService.GetShopItem(item);
+                if (shopItem == null)
+                    continue;
+
+                //Get effects
+                var effects = Array.Empty<uint>();
+                var shopItemInfo = shopItem.GetItemInfo(ItemPriceType.AP);
+                if (shopItemInfo.EffectGroup.Effects.Count > 0)
+                    effects = shopItemInfo.EffectGroup.Effects.Select(x => x.Effect).Where(x => x != 0).ToArray();
+
+                //Create item
+                var newItem = plr.Inventory.Create(item, ItemPriceType.AP, ItemPeriodType.None, 0, 0/*color*/, effects, 1);
+                _logger.Debug("Created new item {0} for set {1}", item.ToString(), message.ItemId);
             }
 
             return true;
