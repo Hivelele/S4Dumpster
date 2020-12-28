@@ -99,7 +99,6 @@ namespace Netsphere.Server.Game
                 {
                     plr.AP += APGain + bonusAPGain;
                     plr.SendMoneyUpdate();
-
                 }
 
                 // Durability loss based on play time

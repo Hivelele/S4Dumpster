@@ -3281,7 +3281,7 @@
 	</item>
 	<item item_key="1021136">
 		<base name="크리스마스 언더웨어 상의" name_key="N1021136" attrib_comment_key="T1021136" sex="man"/>
-		<graphic icon_image="38_male_body_3.dds" to_part_scene_file="38_male_body.scn"/>
+		<graphic icon_image="x_mas_un_male_body.dds" to_part_scene_file="38_male_body.scn"/>
 		<esperchip/>
 		<etc/>
 		<sequence/>
@@ -3447,7 +3447,7 @@
 		<etc/>
 		<sequence/>
 	</item>
-	<item item_key="1021008">
+	<item item_key="c">
 		<base name="테이머 코르셋" name_key="N1021008" attrib_comment_key="T1021008" sex="woman"/>
 		<graphic icon_image="40_female_body.dds" to_node_scene_file1="40_female_skirt.scn" to_node_parent_node1="Bip01 Spine1" to_node_animation_part1="0" to_part_scene_file="40_female_body.scn"/>
 		<esperchip/>
@@ -41063,7 +41063,7 @@
 		<sequence node_name1="Bip01 R Finger22" file_name1="resources/effects/grenade_summer_night_bling.seq" node_name2="Bip01 L Finger1" file_name2="resources/effects/grenade_summer_night_bling.seq"/>
 	</item>
 	<item item_key="1069111">
-		<base name="LOGINcrownM" name_key="N1069111" attrib_comment_key="T1069111" sex="man"/>
+		<base name="LOGINcrownM" name_key="N1069111" attrib_comment_key="T1069111" sex="unisex"/>
 		<graphic icon_image="LoginCrown.png" to_node_scene_file1="LoginCrownMale.scn" to_node_parent_node1="Bip01 Head" to_node_animation_part1="0"/>
 		<esperchip/>
 		<etc/>
@@ -41423,4 +41423,67 @@
 		<etc/>
 		<sequence/>
 	</item>
+        <item item_key="1020999">
+		<base name="크리스마스 언더웨어 상의" name_key="N1021136" attrib_comment_key="T1021136" sex="man"/>
+		<graphic icon_image="xmas_38_male_boy.dds" to_part_scene_file="xmas_38_male_body.scn"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1030999">
+		<base name="크리스마스 언더웨어 하의" name_key="N1031136" attrib_comment_key="T1031136" sex="man"/>
+		<graphic icon_image="xmas_38_male_leg.dds" to_part_scene_file="xmas_38_male_leg.scn" hiding_option="shoes_part1,shoes_part2"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1040999">
+		<base name="크리스마스 언더웨어 하의" name_key="N1031136" attrib_comment_key="T1031136" sex="man"/>
+		<graphic icon_image="xmas_38_male_hand.dds" to_part_scene_file="xmas_38_male_hand.scn" hiding_option="shoes_part1,shoes_part2"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1050999">
+		<base name="크리스마스 언더웨어 하의" name_key="N1031136" attrib_comment_key="T1031136" sex="man"/>
+		<graphic icon_image="xmas_38_male_foot.dds" to_part_scene_file="xmas_38_male_foot.scn" hiding_option="shoes_part1,shoes_part2"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1020998">
+		<base name="크리스마스 오필리아 상의" name_key="N1021137" attrib_comment_key="T1021137" sex="woman"/>
+		<graphic icon_image="xmas_41_female_body.dds" to_part_scene_file="xmas_41_female_body.scn"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1030998">
+		<base name="크리스마스 오필리아 하의" name_key="N1031137" attrib_comment_key="T1031137" sex="woman"/>
+		<graphic icon_image="xmas_41_female_leg.dds" to_part_scene_file="xmas_41_female_leg.scn" hiding_option="shoes_part1,shoes_part2"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1040998">
+		<base name="크리스마스 오필리아 장갑" name_key="N1041137" attrib_comment_key="T1041137" sex="woman"/>
+		<graphic icon_image="xmas_41_female_hand.dds" to_part_scene_file="xmas_41_female_hand.scn" hiding_option="shoes_part1,shoes_part2"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="1050998">
+		<base name="크리스마스 오필리아 신발" name_key="N1051137" attrib_comment_key="T1051137" sex="woman"/>
+		<graphic icon_image="xmas_41_female_foot.dds" to_part_scene_file="xmas_41_female_foot.scn" hiding_option="shoes_part1,shoes_part2"/>
+		<esperchip/>
+		<etc/>
+		<sequence/>
+	</item>
+        <item item_key="2000140">
+		<base name="크로우 카운터 스워드" name_key="N2000140" attrib_comment_key="T2000140" feature_comment_key="F2000009" sex="unisex"/>
+		<graphic icon_image="unique_icon_counter_crow.dds"/>
+		<esperchip/>
+		<etc parent_number="2"/>
+		<sequence/>
+	</item>     
 </itemlist>

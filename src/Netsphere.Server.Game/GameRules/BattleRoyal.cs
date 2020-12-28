@@ -103,6 +103,9 @@ namespace Netsphere.Server.Game.GameRules
                     break;
             }
 
+            if (Room.Options.Name.Contains("m:solo"))
+                return (0, 0);
+
             var rankingBonus = 0f;
             switch (place)
             {
@@ -146,6 +149,9 @@ namespace Netsphere.Server.Game.GameRules
                     rankingBonus = experienceRates.ThirdPlaceBonus;
                     break;
             }
+
+            if (Room.Options.Name.Contains("m:solo"))
+                return (0, 0);
 
             var APGained = (uint)(plr.Score.GetTotalScore() * experienceRates.ScoreFactor + rankingBonus);
             return (APGained, 0);

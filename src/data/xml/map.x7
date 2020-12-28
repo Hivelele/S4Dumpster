@@ -438,36 +438,36 @@
 	<map id="999">
 		<base map_name_key="MAPNAME_1" mode_number="1" limit_player="12" index_number="999"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 	<map id="998">
 		<base map_name_key="MAPNAME_1" mode_number="2" limit_player="12" index_number="998"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 	<map id="997">
 		<base map_name_key="MAPNAME_1" mode_number="8" limit_player="12" index_number="997"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 	<map id="996">
 		<base map_name_key="MAPNAME_1" mode_number="9" limit_player="12" index_number="996"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 	<map id="995">
 		<base map_name_key="MAPNAME_1" mode_number="10" limit_player="12" index_number="995"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 	<map id="994">
 		<base map_name_key="MAPNAME_1" mode_number="11" limit_player="12" index_number="994"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 	<map id="993">
 		<base map_name_key="MAPNAME_1" mode_number="14" limit_player="12" index_number="993"/>
 		<resourse bginfo_path="Resources/MapInfo/bginfo-random.ini" previewinfo_path="Resources/XUI/Image/Lobby/Map_select/random.dds"/>
-		<switch kr="on" eu="on" cn="off" th="off" tw="off" jp="on" id="on"/>
+		<switch kr="on" eu="off" cn="off" th="off" tw="off" jp="on" id="on"/>
 	</map>
 </maplist>

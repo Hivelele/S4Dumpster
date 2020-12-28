@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weaponlist>
-  <!-- XBN sorted by Login -->
+  <!-- XBN sorted by RENE aka Hives biggest Nightmare -->
   
   <!-- History / List -->
   
@@ -17,6 +17,7 @@
   <!-- Ironboots -->
   <!-- Fist -->
   <!-- Exo -->
+  <!-- Hive custom Items -->
   
   
 <!-- Weapons/Guns -->
@@ -1084,6 +1085,15 @@
     <resources reload_sound_file="bsword_reload.ogg" slot_image_file="slot_sword_counter.tga" crosshair_file="crosshair_sword_plasma" crosshair_zoomin_file="crosshair_sword_plasma" />
     <sequence count="1" node_name_1="Dummy" file_name_1="weapon_deathscythe_eff.seq" />
     <other_effects other_type="counter_sword" attack_seq="weapon_counter_upper02.seq" attack_ogg="bsword_counter.ogg" />
+    <sequence2 />
+  </weapon>
+  <!-- Hive Custom Weapons -->
+  <weapon item_key="2000140">
+    <ability type="1" category="1" rate_of_fire="1" power="10" move_speed_rate="1.1" attack_move_speed_rate="1" magazine_capacity="-1" cracked_magazine_capacity="-1" max_ammo="-1" max_ammo_limit="-1" accuracy="0" range="480" />
+    <scene value1="unique_counter_crow_r.scn" value2="unique_counter_crow_l.scn" />
+    <resources reload_sound_file="bsword_reload.ogg" slot_image_file="slot_sword_counter.tga" crosshair_file="crosshair_sword_plasma" crosshair_zoomin_file="crosshair_sword_plasma" />
+    <sequence />
+    <other_effects other_type="counter_sword" attack_seq="weapon_counter_upper31.seq" attack_ogg="bsword_counter.ogg" />
     <sequence2 />
   </weapon>
   <!-- Weapons/Guns -->
